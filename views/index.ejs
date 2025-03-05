@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= title %></title>
 </head>
 <body>
-    Test
+    <ul>
+        <% if (locals.users) {%>
+            <% users.forEach(user => { %>
+                <li>ID: <%= user.id %>, Name: <%= user.username %></li>
+            <% }); %>
+        <% } %>
+    </ul>
+    <a href="/new">Add user</a>
 </body>
 </html>
