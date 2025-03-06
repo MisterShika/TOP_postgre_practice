@@ -13,6 +13,14 @@
             <% }); %>
         <% } %>
     </ul>
-    <a href="/new">Add user</a>
+    <form action="/" method="GET">
+        <label for="search">Find User: </label>
+        <input type="text" name="search" id="search" required>
+        <button type="submit">Search</button>
+    </form>
+    <% if (locals.searchData) { %>
+        <a href="/">See All Users</a><br />
+    <% } %>
+    <a href="/new">Add User</a>
 </body>
 </html>

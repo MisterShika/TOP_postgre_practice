@@ -7,6 +7,7 @@ async function getUsernames(req, res) {
         res.render("index", {
             title: "Search",
             users: searchedUser,
+            searchData: true
         });
     }else{
         const usernames = await db.getAllUsernames();
