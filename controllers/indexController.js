@@ -29,9 +29,17 @@ async function createUsernamePost(req, res) {
     await db.insertUsername(username);
     res.redirect("/");
 }
+
+async function deleteUser(req, res) {
+    console.log("Delete user");
+    const id = req.query.id;
+    await db.deleteUser(id);
+    res.redirect("/");
+}
   
 module.exports = {
     getUsernames,
     createUsernameGet,
-    createUsernamePost
+    createUsernamePost,
+    deleteUser
 };
